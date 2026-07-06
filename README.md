@@ -13,4 +13,6 @@ Build:
 
 npm run build
 
+Deployment: Cloudflare Workers Builds nutzt den aktuellen main-Branch und die Wrangler-Konfiguration im Repository.
+
 Vor der Veroeffentlichung bitte Impressum, Datenschutz, echte Telefonnummer, echte E-Mail-Adresse und finale Texte ergaenzen.
