@@ -26,6 +26,17 @@ const services = [
   },
 ]
 
+const prices = [
+  { title: 'Krallenpflege', price: '15 €', detail: 'Vorsichtiges Kürzen der Krallen.' },
+  { title: 'Bürsten & Fellpflege', price: 'ab 30 €', detail: 'Pflege, Bürsten und Lösen leichter Knoten.' },
+  { title: 'Unterwolle entfernen', price: 'ab 40 €', detail: 'Gründliche Entfernung loser Unterwolle.' },
+  { title: 'Waschen & Föhnen', price: 'ab 45 €', detail: 'Auf Felltyp und Haut abgestimmte Pflege.' },
+  { title: 'Komplettpflege · klein', price: 'ab 60 €', detail: 'Für kleine Hunde – individuell nach Fell und Aufwand.' },
+  { title: 'Komplettpflege · mittel', price: 'ab 80 €', detail: 'Für mittelgroße Hunde – individuell nach Fell und Aufwand.' },
+  { title: 'Komplettpflege · groß', price: 'ab 110 €', detail: 'Für große Hunde – individuell nach Fell und Aufwand.' },
+  { title: 'Welpengewöhnung', price: 'ab 30 €', detail: 'Behutsames Kennenlernen von Pflege und Equipment.' },
+]
+
 const steps = [
   'Sie schreiben uns per WhatsApp, E-Mail oder rufen uns an.',
   'Wir klären Fellzustand, Pflegewunsch, Hamburger Stadtteil und einen passenden Termin.',
@@ -35,7 +46,7 @@ const steps = [
 const priceNotes = [
   'Der Preis richtet sich nach Größe, Fellzustand, Pflegeaufwand und gewünschter Leistung.',
   'Vor dem Termin erhalten Sie eine realistische Einschätzung zum voraussichtlichen Aufwand.',
-  'Bei starker Verfilzung oder besonderem Pflegebedarf kann der tatsächliche Aufwand abweichen.',
+  'Bei starker Verfilzung, besonderem Pflegebedarf oder erhöhtem Zeitaufwand kann der Preis abweichen.',
 ]
 
 const contactItems = [
@@ -138,23 +149,36 @@ function App() {
       </section>
 
       <section id="preise" className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-2 lg:items-start">
-          <div>
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-amber-300">Preise</p>
-            <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">Transparent und fair nach Aufwand.</h2>
+            <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">Vorläufige Startpreise.</h2>
             <p className="mt-5 text-lg leading-8 text-zinc-400">
-              Kein Fell ist gleich. Deshalb erhalten Sie vor dem Termin eine erste Einschätzung, statt mit einem unpassenden Pauschalpreis überrascht zu werden.
+              Unsere Preise befinden sich aktuell in der Einführungsphase. Die folgenden Beträge dienen als transparente Orientierung und können vor der offiziellen Eröffnung noch angepasst werden.
             </p>
           </div>
-          <div className="rounded-3xl border border-amber-300/20 bg-black p-6 shadow-2xl shadow-black/30">
-            <h3 className="text-2xl font-black text-white">So setzt sich der Preis zusammen</h3>
-            <div className="mt-5 space-y-4">
-              {priceNotes.map((note) => (
-                <div key={note} className="rounded-2xl bg-white/[0.05] p-4 text-zinc-300">{note}</div>
-              ))}
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {prices.map((item) => (
+              <article key={item.title} className="flex h-full flex-col rounded-3xl border border-white/10 bg-black p-6 transition hover:-translate-y-1 hover:border-amber-300/35">
+                <h3 className="text-lg font-black text-white">{item.title}</h3>
+                <p className="mt-3 text-3xl font-black text-amber-300">{item.price}</p>
+                <p className="mt-4 leading-7 text-zinc-400">{item.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-6 rounded-3xl border border-amber-300/20 bg-black p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <h3 className="text-2xl font-black text-white">Wichtig zu unseren Preisen</h3>
+              <div className="mt-4 space-y-3">
+                {priceNotes.map((note) => (
+                  <p key={note} className="text-zinc-300">• {note}</p>
+                ))}
+              </div>
             </div>
-            <a href={whatsappLink} target="_blank" rel="noreferrer" className="mt-6 block rounded-2xl border border-amber-300/30 bg-amber-300/10 px-6 py-4 text-center font-black text-amber-200 transition hover:bg-amber-300 hover:text-black">
-              Unverbindlich Preis einschätzen lassen
+            <a href={whatsappLink} target="_blank" rel="noreferrer" className="rounded-2xl border border-amber-300/30 bg-amber-300/10 px-6 py-4 text-center font-black text-amber-200 transition hover:bg-amber-300 hover:text-black">
+              Preis einschätzen lassen
             </a>
           </div>
         </div>
@@ -248,7 +272,39 @@ function App() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-zinc-950">
+      <section id="impressum" className="border-t border-white/10 bg-zinc-950">
+        <div className="mx-auto max-w-7xl px-5 py-16">
+          <p className="font-black uppercase tracking-[0.25em] text-amber-300">Rechtliches</p>
+          <h2 className="mt-3 text-4xl font-black text-white">Impressum</h2>
+          <div className="mt-8 grid gap-8 rounded-3xl border border-white/10 bg-black p-6 md:grid-cols-2 md:p-8">
+            <div>
+              <h3 className="font-black text-white">Angaben nach § 5 DDG</h3>
+              <div className="mt-4 space-y-1 leading-7 text-zinc-300">
+                <p className="font-bold text-white">Pfotenparadies Rust</p>
+                <p>Geschäftsbezeichnung des Einzelunternehmens</p>
+                <p>Inhaber: Fabian Robert Rust</p>
+                <p>San-Francisco-Straße 3</p>
+                <p>20457 Hamburg</p>
+                <p>Deutschland</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-black text-white">Kontakt</h3>
+              <div className="mt-4 space-y-2 leading-7 text-zinc-300">
+                <p>Telefon: <a className="text-amber-300 hover:text-amber-200" href={`tel:${phoneLink}`}>{phoneDisplay}</a></p>
+                <p>E-Mail: <a className="text-amber-300 hover:text-amber-200" href={`mailto:${email}`}>{email}</a></p>
+              </div>
+              <h3 className="mt-8 font-black text-white">Unternehmensform</h3>
+              <p className="mt-4 leading-7 text-zinc-300">Einzelunternehmen · Inhaber Fabian Robert Rust</p>
+            </div>
+          </div>
+          <p className="mt-5 text-sm leading-6 text-zinc-500">
+            Umsatzsteuer-Identifikationsnummer und weitere steuerliche Angaben werden nur ergänzt, sofern sie dem Unternehmen tatsächlich erteilt wurden und für die Anbieterangaben erforderlich sind.
+          </p>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 bg-black">
         <div className="mx-auto max-w-7xl px-5 py-12">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
@@ -274,11 +330,15 @@ function App() {
               <span className="mt-3 inline-flex rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-amber-200">Coming soon</span>
             </div>
           </div>
-          <div className="mt-10 border-t border-white/10 pt-6 text-sm text-zinc-600">
-            <p>© 2026 Pfotenparadies Rust · Impressum und Datenschutz werden als nächste Pflichtseiten ergänzt.</p>
+          <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Pfotenparadies Rust</p>
+            <div className="flex gap-5">
+              <a className="transition hover:text-amber-300" href="#impressum">Impressum</a>
+              <span>Datenschutz folgt</span>
+            </div>
           </div>
         </div>
-      </section>
+      </footer>
     </main>
   )
 }
