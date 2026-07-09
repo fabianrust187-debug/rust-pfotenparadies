@@ -175,6 +175,8 @@ function App() {
                 {priceNotes.map((note) => (
                   <p key={note} className="text-zinc-300">• {note}</p>
                 ))}
+                <p className="text-zinc-300">• Aufgrund der Anwendung der Kleinunternehmerregelung nach § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
+                <p className="text-zinc-300">• Eventuelle Anfahrtskosten werden vor der Terminvereinbarung transparent mitgeteilt.</p>
               </div>
             </div>
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="rounded-2xl border border-amber-300/30 bg-amber-300/10 px-6 py-4 text-center font-black text-amber-200 transition hover:bg-amber-300 hover:text-black">
@@ -299,8 +301,108 @@ function App() {
             </div>
           </div>
           <p className="mt-5 text-sm leading-6 text-zinc-500">
-            Umsatzsteuer-Identifikationsnummer und weitere steuerliche Angaben werden nur ergänzt, sofern sie dem Unternehmen tatsächlich erteilt wurden und für die Anbieterangaben erforderlich sind.
+            Umsatzsteuer-Identifikationsnummer und weitere steuerliche Angaben werden ergänzt, sofern sie dem Unternehmen tatsächlich erteilt wurden und für die Anbieterangaben erforderlich sind.
           </p>
+        </div>
+      </section>
+
+      <section id="datenschutz" className="border-t border-white/10 bg-black">
+        <div className="mx-auto max-w-7xl px-5 py-16">
+          <p className="font-black uppercase tracking-[0.25em] text-amber-300">Rechtliches</p>
+          <h2 className="mt-3 text-4xl font-black text-white">Datenschutzerklärung</h2>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-400">
+            Diese Datenschutzhinweise erklären, welche personenbezogenen Daten beim Besuch unserer Website und bei einer Kontaktaufnahme verarbeitet werden.
+          </p>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">1. Verantwortlicher</h3>
+              <div className="mt-4 space-y-1 leading-7 text-zinc-300">
+                <p className="font-bold text-white">Fabian Robert Rust</p>
+                <p>Pfotenparadies Rust</p>
+                <p>San-Francisco-Straße 3</p>
+                <p>20457 Hamburg</p>
+                <p>Deutschland</p>
+                <p className="pt-2">Telefon: {phoneDisplay}</p>
+                <p>E-Mail: {email}</p>
+              </div>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">2. Bereitstellung der Website</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Unsere Website wird über Dienste von Cloudflare ausgeliefert. Beim Aufruf der Website können technisch erforderliche Verbindungs- und Protokolldaten verarbeitet werden. Dazu können insbesondere IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Adresse, Browser- und Geräteinformationen sowie technische Routing- und Systeminformationen gehören.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Die Verarbeitung erfolgt zur sicheren, stabilen und schnellen Bereitstellung der Website auf Grundlage unseres berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO. Soweit Daten in Drittländer übertragen werden, stützt Cloudflare entsprechende Übermittlungen nach eigenen Angaben unter anderem auf anwendbare Angemessenheitsbeschlüsse und EU-Standardvertragsklauseln.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">3. Kontakt per E-Mail oder Telefon</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Wenn Sie uns per E-Mail oder telefonisch kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten und den Inhalt Ihrer Anfrage, um Ihr Anliegen zu bearbeiten und mit Ihnen zu kommunizieren.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Erfolgt die Kontaktaufnahme zur Anbahnung oder Durchführung eines Auftrags, ist Art. 6 Abs. 1 lit. b DSGVO die Rechtsgrundlage. Bei sonstigen Anfragen erfolgt die Verarbeitung auf Grundlage unseres berechtigten Interesses an der Bearbeitung eingehender Anfragen gemäß Art. 6 Abs. 1 lit. f DSGVO.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Für unsere geschäftliche E-Mail-Kommunikation nutzen wir E-Mail-Dienste der STRATO GmbH, Otto-Ostrowski-Straße 7, 10249 Berlin.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">4. Kontakt über WhatsApp</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Auf unserer Website befindet sich ein Link zu WhatsApp. Eine Verbindung zu WhatsApp wird über diesen Link erst hergestellt, wenn Sie ihn aktiv anklicken und den externen Dienst aufrufen.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Bei der Nutzung von WhatsApp verarbeitet WhatsApp nach eigenen Angaben unter anderem Telefonnummer, Nutzungs-, Geräte- und Verbindungsinformationen sowie IP-Adressen. Eine Verarbeitung außerhalb des Europäischen Wirtschaftsraums kann stattfinden. WhatsApp nennt hierfür unter anderem Angemessenheitsbeschlüsse, das EU-US Data Privacy Framework und EU-Standardvertragsklauseln als Übermittlungsmechanismen.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Nachrichten, die Sie uns über WhatsApp senden, verarbeiten wir zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist je nach Inhalt Art. 6 Abs. 1 lit. b oder lit. f DSGVO. Alternativ können Sie uns jederzeit per E-Mail oder Telefon kontaktieren.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">5. Cookies, Analyse und Social Media</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Wir setzen auf dieser Website derzeit keine eigenen Analyse- oder Marketingtools, keine Werbe-Pixel und keine eingebetteten Social-Media-Plugins ein. Von uns werden keine Marketing- oder Analyse-Cookies bewusst gesetzt.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Technisch notwendige Verarbeitung durch die eingesetzten Infrastruktur- und Sicherheitsdienste bleibt hiervon unberührt. Sollten wir zukünftig Analyse-, Marketing- oder eingebettete Social-Media-Dienste hinzufügen, werden diese Datenschutzhinweise und gegebenenfalls die Einwilligungsverwaltung vorher angepasst.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">6. Speicherdauer</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Wir speichern personenbezogene Daten nur so lange, wie dies für den jeweiligen Zweck erforderlich ist. Sobald der Zweck entfällt, werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungs- oder Nachweispflichten entgegenstehen oder die weitere Speicherung zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">7. Ihre Rechte</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Außerdem können Sie einer Verarbeitung widersprechen, die auf Art. 6 Abs. 1 lit. f DSGVO beruht.
+              </p>
+              <p className="mt-4 leading-7 text-zinc-400">
+                Zur Ausübung Ihrer Rechte genügt eine Nachricht an {email}. Besteht eine Verarbeitung auf Grundlage einer Einwilligung, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
+              </p>
+            </article>
+
+            <article className="rounded-3xl border border-white/10 bg-zinc-950 p-6 md:p-8">
+              <h3 className="text-xl font-black text-white">8. Beschwerderecht</h3>
+              <p className="mt-4 leading-7 text-zinc-300">
+                Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Für Unternehmen mit Sitz in Hamburg ist insbesondere der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit eine zuständige Aufsichtsbehörde.
+              </p>
+              <a href="https://datenschutz-hamburg.de/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-xl border border-amber-300/25 bg-amber-300/10 px-4 py-2 font-bold text-amber-200 transition hover:bg-amber-300 hover:text-black">
+                Zur Hamburger Datenschutzaufsicht
+              </a>
+            </article>
+          </div>
+
+          <p className="mt-8 text-sm text-zinc-500">Stand: Juli 2026</p>
         </div>
       </section>
 
@@ -334,7 +436,7 @@ function App() {
             <p>© 2026 Pfotenparadies Rust</p>
             <div className="flex gap-5">
               <a className="transition hover:text-amber-300" href="#impressum">Impressum</a>
-              <span>Datenschutz folgt</span>
+              <a className="transition hover:text-amber-300" href="#datenschutz">Datenschutz</a>
             </div>
           </div>
         </div>
